@@ -6,7 +6,7 @@ public partial class MainMenu : Control
 
 	Button start;
 	Button exit;
-	public PackedScene start_level = GD.Load<PackedScene>("res://node_2d.tscn");
+	public PackedScene start_level = GD.Load<PackedScene>("res://scenes/main.tscn");
 
 
 

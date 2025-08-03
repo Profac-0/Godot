@@ -13,7 +13,7 @@ public partial class TabuleiroManager : Node
 	public override void _Ready()
 	{
 		tabuleiro = new int[linhas, colunas];
-		this.sortStartTabuleiro();
+		sortStartTabuleiro();
 	}
 
 	// Faz o sorteio do itens iniciais no tabuleiro
@@ -29,8 +29,5 @@ public partial class TabuleiroManager : Node
 		}
 	}
 
-	// Called every frame. 'delta' is the elapsed time since the previous frame.
-	public override void _Process(double delta)
-	{
-	}
+	
 }
