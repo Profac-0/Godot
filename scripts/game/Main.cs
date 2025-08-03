@@ -2,7 +2,7 @@ using Godot;
 using System;
 
 
-public partial class Node2d : Node2D
+public partial class Main : Node2D
 {
 	Node2D player;
 	Button botaoA,botaoB,botaoC,botaoD;
@@ -13,10 +13,10 @@ public partial class Node2d : Node2D
 
 	public override void _Ready(){
 		player=GetNode<Node2D>("mob");
-		
 	}
 
-	public void _on_colisao_pressed(){
+	public void _on_colisao_pressed()
+	{
 		GD.Print("Shangri-la");
 		over = true;
 	}

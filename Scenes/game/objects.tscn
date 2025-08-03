@@ -25,7 +25,7 @@ animations = [{
 "texture": ExtResource("2_f2hfs")
 }],
 "loop": true,
-"name": &"evols",
+"name": &"stages",
 "speed": 5.0
 }]
 
@@ -39,8 +39,7 @@ script = ExtResource("1_1evk1")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_3kh0f")
-animation = &"evols"
-frame = 1
+animation = &"stages"
 metadata/_edit_group_ = true
 metadata/_edit_lock_ = true
 
