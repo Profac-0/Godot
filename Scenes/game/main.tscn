@@ -1,0 +1,260 @@
+[gd_scene load_steps=5 format=3 uid="uid://bddk3ao67odxj"]
+
+[ext_resource type="Script" path="res://scripts/game/Main.cs" id="1_qg2q0"]
+[ext_resource type="PackedScene" uid="uid://cc6vloievrtv4" path="res://Scenes/game/objects.tscn" id="2_r4vdh"]
+[ext_resource type="Texture2D" uid="uid://cli6lsr0p0p4q" path="res://sprites/1080x1920tabu_protPNG.png" id="3_ntfp2"]
+[ext_resource type="Texture2D" uid="uid://cenlh3n3q2cw" path="res://sprites/background/bg_all.png" id="4_gyiq7"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_qg2q0")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(570, 330)
+scale = Vector2(0.965243, 1)
+
+[node name="tabuleiro" type="Sprite2D" parent="Camera2D"]
+visibility_layer = 4
+scale = Vector2(0.453689, 0.337728)
+texture = ExtResource("3_ntfp2")
+
+[node name="background" type="Sprite2D" parent="Camera2D"]
+show_behind_parent = true
+visibility_layer = 8
+position = Vector2(0, -1.52588e-05)
+scale = Vector2(2.48642, 2.7)
+texture = ExtResource("4_gyiq7")
+
+[node name="Espacos" type="Node" parent="."]
+
+[node name="Objects" parent="Espacos" instance=ExtResource("2_r4vdh")]
+position = Vector2(430, 84)
+scale = Vector2(0.25, 0.25)
+metadata/_edit_lock_ = true
+
+[node name="Objects2" parent="Espacos" instance=ExtResource("2_r4vdh")]
+position = Vector2(494, 84)
+scale = Vector2(0.25, 0.25)
+coluna = 1
+metadata/_edit_lock_ = true
+
+[node name="Objects3" parent="Espacos" instance=ExtResource("2_r4vdh")]
+position = Vector2(562, 84)
+scale = Vector2(0.25, 0.25)
+coluna = 2
+metadata/_edit_lock_ = true
+
+[node name="Objects4" parent="Espacos" instance=ExtResource("2_r4vdh")]
+position = Vector2(633, 84)
+scale = Vector2(0.25, 0.25)
+coluna = 3
+metadata/_edit_lock_ = true
+
+[node name="Objects5" parent="Espacos" instance=ExtResource("2_r4vdh")]
+position = Vector2(702, 84)
+scale = Vector2(0.25, 0.25)
+coluna = 4
+metadata/_edit_lock_ = true
+
+[node name="Objects6" parent="Espacos" instance=ExtResource("2_r4vdh")]
+position = Vector2(430, 145)
+scale = Vector2(0.25, 0.25)
+linha = 1
+metadata/_edit_lock_ = true
+
+[node name="Objects7" parent="Espacos" instance=ExtResource("2_r4vdh")]
+position = Vector2(495, 144)
+scale = Vector2(0.25, 0.25)
+linha = 1
+coluna = 1
+metadata/_edit_lock_ = true
+
+[node name="Objects8" parent="Espacos" instance=ExtResource("2_r4vdh")]
+position = Vector2(563, 143)
+scale = Vector2(0.25, 0.25)
+linha = 1
+coluna = 2
+metadata/_edit_lock_ = true
+
+[node name="Objects9" parent="Espacos" instance=ExtResource("2_r4vdh")]
+position = Vector2(634, 143)
+scale = Vector2(0.25, 0.25)
+linha = 1
+coluna = 3
+metadata/_edit_lock_ = true
+
+[node name="Objects10" parent="Espacos" instance=ExtResource("2_r4vdh")]
+position = Vector2(702, 143)
+scale = Vector2(0.25, 0.25)
+linha = 1
+coluna = 4
+metadata/_edit_lock_ = true
+
+[node name="Objects11" parent="Espacos" instance=ExtResource("2_r4vdh")]
+position = Vector2(432, 208)
+scale = Vector2(0.25, 0.25)
+linha = 2
+metadata/_edit_lock_ = true
+
+[node name="Objects12" parent="Espacos" instance=ExtResource("2_r4vdh")]
+position = Vector2(496, 208)
+scale = Vector2(0.25, 0.25)
+linha = 2
+coluna = 1
+metadata/_edit_lock_ = true
+
+[node name="Objects13" parent="Espacos" instance=ExtResource("2_r4vdh")]
+position = Vector2(564, 208)
+scale = Vector2(0.25, 0.25)
+linha = 2
+coluna = 2
+metadata/_edit_lock_ = true
+
+[node name="Objects14" parent="Espacos" instance=ExtResource("2_r4vdh")]
+position = Vector2(635, 208)
+scale = Vector2(0.25, 0.25)
+linha = 2
+coluna = 3
+metadata/_edit_lock_ = true
+
+[node name="Objects15" parent="Espacos" instance=ExtResource("2_r4vdh")]
+position = Vector2(704, 208)
+scale = Vector2(0.25, 0.25)
+linha = 2
+coluna = 4
+metadata/_edit_lock_ = true
+
+[node name="Objects16" parent="Espacos" instance=ExtResource("2_r4vdh")]
+position = Vector2(431, 272)
+scale = Vector2(0.25, 0.25)
+linha = 3
+metadata/_edit_lock_ = true
+
+[node name="Objects17" parent="Espacos" instance=ExtResource("2_r4vdh")]
+position = Vector2(495, 271)
+scale = Vector2(0.25, 0.25)
+linha = 3
+coluna = 1
+metadata/_edit_lock_ = true
+
+[node name="Objects18" parent="Espacos" instance=ExtResource("2_r4vdh")]
+position = Vector2(564, 270)
+scale = Vector2(0.25, 0.25)
+linha = 3
+coluna = 2
+metadata/_edit_lock_ = true
+
+[node name="Objects19" parent="Espacos" instance=ExtResource("2_r4vdh")]
+position = Vector2(636, 267)
+scale = Vector2(0.25, 0.25)
+linha = 3
+coluna = 3
+metadata/_edit_lock_ = true
+
+[node name="Objects20" parent="Espacos" instance=ExtResource("2_r4vdh")]
+position = Vector2(704, 267)
+scale = Vector2(0.25, 0.25)
+linha = 3
+coluna = 4
+metadata/_edit_lock_ = true
+
+[node name="Objects21" parent="Espacos" instance=ExtResource("2_r4vdh")]
+position = Vector2(432, 335)
+scale = Vector2(0.25, 0.25)
+linha = 4
+metadata/_edit_lock_ = true
+
+[node name="Objects22" parent="Espacos" instance=ExtResource("2_r4vdh")]
+position = Vector2(496, 335)
+scale = Vector2(0.25, 0.25)
+linha = 4
+coluna = 1
+metadata/_edit_lock_ = true
+
+[node name="Objects23" parent="Espacos" instance=ExtResource("2_r4vdh")]
+position = Vector2(564, 335)
+scale = Vector2(0.25, 0.25)
+linha = 4
+coluna = 2
+metadata/_edit_lock_ = true
+
+[node name="Objects24" parent="Espacos" instance=ExtResource("2_r4vdh")]
+position = Vector2(635, 335)
+scale = Vector2(0.25, 0.25)
+linha = 4
+coluna = 3
+metadata/_edit_lock_ = true
+
+[node name="Objects25" parent="Espacos" instance=ExtResource("2_r4vdh")]
+position = Vector2(704, 335)
+scale = Vector2(0.25, 0.25)
+linha = 4
+coluna = 4
+metadata/_edit_lock_ = true
+
+[node name="Objects26" parent="Espacos" instance=ExtResource("2_r4vdh")]
+position = Vector2(432, 396)
+scale = Vector2(0.25, 0.25)
+linha = 5
+metadata/_edit_lock_ = true
+
+[node name="Objects27" parent="Espacos" instance=ExtResource("2_r4vdh")]
+position = Vector2(495, 398)
+scale = Vector2(0.25, 0.25)
+linha = 5
+coluna = 1
+metadata/_edit_lock_ = true
+
+[node name="Objects28" parent="Espacos" instance=ExtResource("2_r4vdh")]
+position = Vector2(564, 397)
+scale = Vector2(0.25, 0.25)
+linha = 5
+coluna = 2
+metadata/_edit_lock_ = true
+
+[node name="Objects29" parent="Espacos" instance=ExtResource("2_r4vdh")]
+position = Vector2(636, 394)
+scale = Vector2(0.25, 0.25)
+linha = 5
+coluna = 3
+metadata/_edit_lock_ = true
+
+[node name="Objects30" parent="Espacos" instance=ExtResource("2_r4vdh")]
+position = Vector2(704, 394)
+scale = Vector2(0.25, 0.25)
+linha = 5
+coluna = 4
+metadata/_edit_lock_ = true
+
+[node name="Objects31" parent="Espacos" instance=ExtResource("2_r4vdh")]
+position = Vector2(432, 458)
+scale = Vector2(0.25, 0.25)
+linha = 6
+metadata/_edit_lock_ = true
+
+[node name="Objects32" parent="Espacos" instance=ExtResource("2_r4vdh")]
+position = Vector2(496, 458)
+scale = Vector2(0.25, 0.25)
+linha = 6
+coluna = 1
+metadata/_edit_lock_ = true
+
+[node name="Objects33" parent="Espacos" instance=ExtResource("2_r4vdh")]
+position = Vector2(564, 458)
+scale = Vector2(0.25, 0.25)
+linha = 6
+coluna = 2
+metadata/_edit_lock_ = true
+
+[node name="Objects34" parent="Espacos" instance=ExtResource("2_r4vdh")]
+position = Vector2(635, 458)
+scale = Vector2(0.25, 0.25)
+linha = 6
+coluna = 3
+metadata/_edit_lock_ = true
+
+[node name="Objects35" parent="Espacos" instance=ExtResource("2_r4vdh")]
+position = Vector2(704, 458)
+scale = Vector2(0.25, 0.25)
+linha = 6
+coluna = 4
+metadata/_edit_lock_ = true
