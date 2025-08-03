@@ -1,0 +1,9 @@
+# Godot 4+ specific ignores
+.godot/
+/android/
+sprites/
+.vs/
+.vscode/
+*.*.import
+*.*.old
+*.*.old.*
