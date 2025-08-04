@@ -7,8 +7,8 @@ public partial class TabuleiroManager : Node
 	[Signal]
 	public delegate void setTypeEventHandler();
 	// Essa matriz vai representar o tabuleiro do jogo;
-	const int colunas = 5;
-	const int linhas = 7;
+	const int colunas = 4;
+	const int linhas = 5;
 	public int[,] tabuleiro;
 	// valores do click 
 	public AnimatedSprite2D emUsoSprite;
