@@ -45,7 +45,7 @@ public partial class TabuleiroManager : Node
 				{
 					tabuleiro[position.X, position.Y] = 0;
 				}
-				tabuleiro[x, y] = antigoVal + 1;
+				tabuleiro[x, y] = Math.Min(antigoVal + 1, numDePossiveisObjects);
 				EmitSignal(SignalName.setType);
 			}
 		} while (adjacents.Count >= 3);
