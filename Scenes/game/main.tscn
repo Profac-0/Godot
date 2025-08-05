@@ -4,10 +4,10 @@
 [ext_resource type="Texture2D" uid="uid://cx8hx27hyln4i" path="res://sprites/tabuleiros/novo_tabuleiro1080x1920.png" id="2_jhhf1"]
 [ext_resource type="PackedScene" uid="uid://cc6vloievrtv4" path="res://scenes/game/objects.tscn" id="2_r4vdh"]
 [ext_resource type="Texture2D" uid="uid://cenlh3n3q2cw" path="res://sprites/background/bg_all.png" id="4_gyiq7"]
-[ext_resource type="Texture2D" uid="uid://cuxtr6i3w1tp6" path="res://sprites/semente.PNG" id="5_n3t0l"]
-[ext_resource type="Texture2D" uid="uid://8u1v10n1jybx" path="res://sprites/broto.PNG" id="6_qupfn"]
-[ext_resource type="Texture2D" uid="uid://bf2m6fxgct5q6" path="res://sprites/arbusto.PNG" id="7_vi80k"]
-[ext_resource type="Texture2D" uid="uid://0wia8mhxkq8s" path="res://sprites/arvore.PNG" id="8_3avks"]
+[ext_resource type="Texture2D" uid="uid://dnv5fqgrdh7tq" path="res://sprites/plantas/semente300x300.png" id="5_rei4b"]
+[ext_resource type="Texture2D" uid="uid://bknnr1bwqq5ui" path="res://sprites/plantas/broto300x300.png" id="6_58ipo"]
+[ext_resource type="Texture2D" uid="uid://b2vle1mp71c88" path="res://sprites/plantas/arbusto300x300.png" id="7_nsc31"]
+[ext_resource type="Texture2D" uid="uid://lw2164blcu4n" path="res://sprites/plantas/arvore300x300.png" id="8_ewx4s"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_m8rs3"]
 animations = [{
@@ -16,16 +16,16 @@ animations = [{
 "texture": null
 }, {
 "duration": 1.0,
-"texture": ExtResource("5_n3t0l")
+"texture": ExtResource("5_rei4b")
 }, {
 "duration": 1.0,
-"texture": ExtResource("6_qupfn")
+"texture": ExtResource("6_58ipo")
 }, {
 "duration": 1.0,
-"texture": ExtResource("7_vi80k")
+"texture": ExtResource("7_nsc31")
 }, {
 "duration": 1.0,
-"texture": ExtResource("8_3avks")
+"texture": ExtResource("8_ewx4s")
 }],
 "loop": true,
 "name": &"stages",
@@ -169,7 +169,7 @@ coluna = 3
 position = Vector2(565, 573)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="EmUso"]
-scale = Vector2(0.45, 0.45)
+scale = Vector2(0.3, 0.3)
 sprite_frames = SubResource("SpriteFrames_m8rs3")
 animation = &"stages"
 metadata/_edit_group_ = true
@@ -179,7 +179,7 @@ metadata/_edit_lock_ = true
 position = Vector2(683, 577)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Proximo"]
-scale = Vector2(0.25, 0.25)
+scale = Vector2(0.2, 0.2)
 sprite_frames = SubResource("SpriteFrames_m8rs3")
 animation = &"stages"
 metadata/_edit_group_ = true

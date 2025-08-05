@@ -33,19 +33,24 @@ public partial class TabuleiroManager : Node
 
 	public void tryJoinElements(int x, int y)
 	{
-		nextObjectToUse();
-		int antigoVal = tabuleiro[x, y];
-		if (antigoVal >= numDePossiveisObjects) return;
-		List<Vector2I> adjacents = searchForEquals(x, y, antigoVal);
-		if (adjacents.Count >= 3)
+		List<Vector2I> adjacents;
+		do
 		{
-			foreach (Vector2I position in adjacents)
+			nextObjectToUse();
+			int antigoVal = tabuleiro[x, y];
+			adjacents = searchForEquals(x, y, antigoVal);
+			if (adjacents.Count >= 3)
 			{
-				tabuleiro[position.X, position.Y] = 0;
+				foreach (Vector2I position in adjacents)
+				{
+					tabuleiro[position.X, position.Y] = 0;
+				}
+				tabuleiro[x, y] = antigoVal + 1;
+				EmitSignal(SignalName.setType);
 			}
-			tabuleiro[x, y] = antigoVal+1;
-			EmitSignal(SignalName.setType);
-		}
+		} while (adjacents.Count >= 3);
+		
+		
 	}
 
 	private List<Vector2I> searchForEquals(int x, int y, int target)

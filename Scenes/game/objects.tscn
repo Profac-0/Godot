@@ -1,10 +1,10 @@
 [gd_scene load_steps=9 format=3 uid="uid://cc6vloievrtv4"]
 
 [ext_resource type="Script" path="res://scripts/game/Objects.cs" id="1_1evk1"]
-[ext_resource type="Texture2D" uid="uid://bf2m6fxgct5q6" path="res://sprites/arbusto.PNG" id="1_oanpq"]
-[ext_resource type="Texture2D" uid="uid://cuxtr6i3w1tp6" path="res://sprites/semente.PNG" id="2_40xkt"]
-[ext_resource type="Texture2D" uid="uid://0wia8mhxkq8s" path="res://sprites/arvore.PNG" id="2_f2hfs"]
-[ext_resource type="Texture2D" uid="uid://8u1v10n1jybx" path="res://sprites/broto.PNG" id="3_7ci6m"]
+[ext_resource type="Texture2D" uid="uid://dnv5fqgrdh7tq" path="res://sprites/plantas/semente300x300.png" id="2_ukhnc"]
+[ext_resource type="Texture2D" uid="uid://bknnr1bwqq5ui" path="res://sprites/plantas/broto300x300.png" id="3_7xf4r"]
+[ext_resource type="Texture2D" uid="uid://b2vle1mp71c88" path="res://sprites/plantas/arbusto300x300.png" id="4_mqf2o"]
+[ext_resource type="Texture2D" uid="uid://lw2164blcu4n" path="res://sprites/plantas/arvore300x300.png" id="5_bd5ut"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_3kh0f"]
 animations = [{
@@ -13,16 +13,16 @@ animations = [{
 "texture": null
 }, {
 "duration": 1.0,
-"texture": ExtResource("2_40xkt")
+"texture": ExtResource("2_ukhnc")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_7ci6m")
+"texture": ExtResource("3_7xf4r")
 }, {
 "duration": 1.0,
-"texture": ExtResource("1_oanpq")
+"texture": ExtResource("4_mqf2o")
 }, {
 "duration": 1.0,
-"texture": ExtResource("2_f2hfs")
+"texture": ExtResource("5_bd5ut")
 }],
 "loop": true,
 "name": &"stages",
@@ -38,8 +38,10 @@ size = Vector2(193, 192)
 script = ExtResource("1_1evk1")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.65, 0.65)
 sprite_frames = SubResource("SpriteFrames_3kh0f")
 animation = &"stages"
+frame = 2
 metadata/_edit_group_ = true
 metadata/_edit_lock_ = true
 
