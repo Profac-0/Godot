@@ -12,7 +12,7 @@ public partial class Main : Node2D
 
 
 	public override void _Ready(){
-		player=GetNode<Node2D>("mob");
+		// player=GetNode<Node2D>("mob");
 	}
 
 	public void _on_colisao_pressed()

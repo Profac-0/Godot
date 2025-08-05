@@ -10,9 +10,9 @@ config_version=5
 
 [application]
 
-config/name="jurubamanji - main"
+config/name="jurubamanji"
 run/main_scene="res://Scenes/game/main.tscn"
-config/features=PackedStringArray("4.1", "C#", "GL Compatibility")
+config/features=PackedStringArray("4.4", "C#", "GL Compatibility")
 config/icon="res://icon.svg"
 
 [autoload]
@@ -31,3 +31,4 @@ pointing/emulate_touch_from_mouse=true
 
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+textures/vram_compression/import_etc2_astc=true

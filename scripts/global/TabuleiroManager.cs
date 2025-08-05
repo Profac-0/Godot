@@ -36,7 +36,6 @@ public partial class TabuleiroManager : Node
 		List<Vector2I> adjacents;
 		do
 		{
-			nextObjectToUse();
 			int antigoVal = tabuleiro[x, y];
 			adjacents = searchForEquals(x, y, antigoVal);
 			if (adjacents.Count >= 3)
@@ -46,11 +45,10 @@ public partial class TabuleiroManager : Node
 					tabuleiro[position.X, position.Y] = 0;
 				}
 				tabuleiro[x, y] = Math.Min(antigoVal + 1, numDePossiveisObjects);
-				EmitSignal(SignalName.setType);
 			}
 		} while (adjacents.Count >= 3);
-		
-		
+		nextObjectToUse();
+		EmitSignal(SignalName.setType);
 	}
 
 	private List<Vector2I> searchForEquals(int x, int y, int target)

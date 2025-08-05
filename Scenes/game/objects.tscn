@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://cc6vloievrtv4"]
 
-[ext_resource type="Script" path="res://scripts/game/Objects.cs" id="1_1evk1"]
+[ext_resource type="Script" uid="uid://g7vhpevjcbkh" path="res://scripts/game/Objects.cs" id="1_1evk1"]
 [ext_resource type="Texture2D" uid="uid://dnv5fqgrdh7tq" path="res://sprites/plantas/semente300x300.png" id="2_ukhnc"]
 [ext_resource type="Texture2D" uid="uid://bknnr1bwqq5ui" path="res://sprites/plantas/broto300x300.png" id="3_7xf4r"]
 [ext_resource type="Texture2D" uid="uid://b2vle1mp71c88" path="res://sprites/plantas/arbusto300x300.png" id="4_mqf2o"]

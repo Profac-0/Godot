@@ -26,7 +26,7 @@ public partial class Objects : Node2D
 	private void _OnObjectPressed()
 	{
 		if (tabuleiroManager.tabuleiro[linha, coluna] != 0) return;
-		stages.Frame += tabuleiroManager.emUso;
+		stages.Frame = tabuleiroManager.emUso;
 		tabuleiroManager.tabuleiro[linha, coluna] = stages.Frame;
 		tabuleiroManager.tryJoinElements(linha, coluna);
 

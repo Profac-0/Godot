@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://bddk3ao67odxj"]
 
-[ext_resource type="Script" path="res://scripts/game/Main.cs" id="1_qg2q0"]
+[ext_resource type="Script" uid="uid://dn0el4cl7r8bb" path="res://scripts/game/Main.cs" id="1_qg2q0"]
 [ext_resource type="Texture2D" uid="uid://cx8hx27hyln4i" path="res://sprites/tabuleiros/novo_tabuleiro1080x1920.png" id="2_jhhf1"]
 [ext_resource type="PackedScene" uid="uid://cc6vloievrtv4" path="res://scenes/game/objects.tscn" id="2_r4vdh"]
 [ext_resource type="Texture2D" uid="uid://cenlh3n3q2cw" path="res://sprites/background/bg_all.png" id="4_gyiq7"]
