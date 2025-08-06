@@ -55,4 +55,9 @@ scale = Vector2(9.5, 9.5)
 shape = SubResource("RectangleShape2D_tcosr")
 metadata/_edit_lock_ = true
 
+[node name="GoToEvolve" type="Timer" parent="."]
+wait_time = 0.55
+one_shot = true
+
 [connection signal="pressed" from="TouchScreenButton" to="." method="_OnObjectPressed"]
+[connection signal="timeout" from="GoToEvolve" to="." method="onGoToEvolveTimeout"]

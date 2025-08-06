@@ -1,11 +1,12 @@
 using Godot;
 using System;
 using System.Collections.Generic;
+using System.Numerics;
 
 public partial class TabuleiroManager : Node
 {
 	[Signal]
-	public delegate void setTypeEventHandler();
+	public delegate void setTypeEventHandler(Godot.Vector2 clickedGlobalPosition, bool evolveAObject, int clickValue);
 	// Essa matriz vai representar o tabuleiro do jogo;
 	const int colunas = 4;
 	const int linhas = 5;
@@ -31,24 +32,30 @@ public partial class TabuleiroManager : Node
 		emUsoSprite.Frame = emUso;
 	}
 
-	public void tryJoinElements(int x, int y)
+	public void tryJoinElements(int x, int y, Godot.Vector2 elementGlobalPosition)
 	{
 		List<Vector2I> adjacents;
+		// garantir que eu tenha o valor exato do clique para emitir o sinal
+		int clickValue = emUso;
+		// Coloca o valor do clique no tabuleiro
+		tabuleiro[x, y] = clickValue;
+		bool objectEvolve = false;
 		do
 		{
 			int antigoVal = tabuleiro[x, y];
 			adjacents = searchForEquals(x, y, antigoVal);
 			if (adjacents.Count >= 3)
 			{
+				objectEvolve = true;
 				foreach (Vector2I position in adjacents)
 				{
-					tabuleiro[position.X, position.Y] = 0;
+					tabuleiro[position.X, position.Y] = -1;
 				}
 				tabuleiro[x, y] = Math.Min(antigoVal + 1, numDePossiveisObjects);
 			}
 		} while (adjacents.Count >= 3);
 		nextObjectToUse();
-		EmitSignal(SignalName.setType);
+		EmitSignal(SignalName.setType, elementGlobalPosition, objectEvolve, clickValue);
 	}
 
 	private List<Vector2I> searchForEquals(int x, int y, int target)
