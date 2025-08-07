@@ -13,9 +13,10 @@ public partial class TabuleiroManager : Node
 	public int[,] tabuleiro;
 	// valores do click 
 	public AnimatedSprite2D emUsoSprite;
-	public AnimatedSprite2D proximoSprite;
+	public AnimatedSprite2D reservaSprite;
 	public int emUso;
-	public int proximo;
+	public int reserva;
+	public TouchScreenButton reservaCollision;
 	// Numero de possiveis objetos, nesse caso: semente, broto, arbusto e arvore
 	const int numDePossiveisObjects = 4;
 	public override void _Ready()
@@ -23,15 +24,33 @@ public partial class TabuleiroManager : Node
 		tabuleiro = new int[linhas, colunas];
 		sortStartTabuleiro();
 		emUso = GD.RandRange(1, numDePossiveisObjects);
-		proximo = GD.RandRange(1, numDePossiveisObjects);
+		reserva = 0;
 		// Pega os sprites do emUso e proximo no tabuleiro
 		emUsoSprite = GetNode<AnimatedSprite2D>("/root/Main/EmUso/AnimatedSprite2D");
-		proximoSprite = GetNode<AnimatedSprite2D>("/root/Main/Proximo/AnimatedSprite2D");
+		reservaSprite = GetNode<AnimatedSprite2D>("/root/Main/Reserva/AnimatedSprite2D");
+		reservaCollision = GetNode<TouchScreenButton>("/root/Main/Reserva/TouchScreenButton");
+		reservaCollision.Pressed += swap;
 		//Seta os sprites para o valor sorteado
-		proximoSprite.Frame = proximo;
+		reservaSprite.Frame = reserva;
 		emUsoSprite.Frame = emUso;
 	}
 
+	public void swap()
+	{	
+		if (reserva > 0)
+		{
+			int temp = reserva;
+			reserva = emUso;
+			emUso = temp;
+		}
+		else
+		{
+			reserva = emUso;
+			emUso = GD.RandRange(1, numDePossiveisObjects);
+		}
+		reservaSprite.Frame = reserva;
+		emUsoSprite.Frame = emUso;
+	}
 	public void tryJoinElements(int x, int y, Godot.Vector2 elementGlobalPosition)
 	{
 		List<Vector2I> adjacents;
@@ -54,7 +73,8 @@ public partial class TabuleiroManager : Node
 				tabuleiro[x, y] = Math.Min(antigoVal + 1, numDePossiveisObjects);
 			}
 		} while (adjacents.Count >= 3);
-		nextObjectToUse();
+		emUso = GD.RandRange(1, numDePossiveisObjects);
+		emUsoSprite.Frame = emUso;
 		EmitSignal(SignalName.setType, elementGlobalPosition, objectEvolve, clickValue);
 	}
 
@@ -94,14 +114,6 @@ public partial class TabuleiroManager : Node
 		return adjacents;
 	}
 
-	private void nextObjectToUse()
-	{
-		emUso = proximo;
-		proximo = GD.RandRange(1, numDePossiveisObjects);
-		// Seta os valores no painel do tabuleiro
-		proximoSprite.Frame = proximo;
-		emUsoSprite.Frame = emUso;
-	}
 	// Faz o sorteio do itens iniciais no tabuleiro
 	private void sortStartTabuleiro()
 	{
